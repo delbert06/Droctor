@@ -8,17 +8,18 @@
 
 import UIKit
 
-class HomeViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
-    @IBOutlet weak var tableView: UITableView!
+class HomeViewController: UIViewController {
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var dataView: UIView!
     
     var list = ["个人信息","体质信息","行为习惯","签约情况"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = self
-        
         title = "档案信息"
+        sv()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,25 +27,16 @@ class HomeViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         // Dispose of any resources that can be recreated.
     }
     
-     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return list.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{  
-        let cell = tableView.dequeueReusableCell(withIdentifier: "typeCell") as! HomeTableViewCell
-        cell.typeName.text = list[indexPath.row]
-        
-        if list[indexPath.row]=="体质信息" {
-            
+    func sv(){
+        let hight = 50
+        for i in 0..<list.count{
+            let label = UILabel()
+            label.frame = CGRect(x: 20, y: i*hight, width:Int(scrollView.bounds.size.width), height: hight)
+            label.text = list[i]
+//            label.textAlignment = .center
+            scrollView.addSubview(label)
+            label.tag = i
         }
-        
-        return cell
     }
     
     
