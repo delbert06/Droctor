@@ -14,18 +14,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordText: UITextField!
     @IBAction func loginBtn(_ sender: AnyObject) {
         if (accountText.text == "admin" && passwordText.text=="123456"){
-            self.performSegue(withIdentifier: "login", sender: self)
+//            self.performSegue(withIdentifier: "login", sender: self)
             print("登录成功")
         }
         else{
             print("登录失败")
-//            let cancelAction = UIAlertAction(title: "取消", style: .destructive, handler: nil)
-//            let alertController = UIAlertController(title: "提示", message: "账号或密码错误", preferredStyle: .alert)
-//
-//            let okAction = UIAlertAction(title: "好的", style: .default, handler: nil)
-//            alertController.addAction(cancelAction)
-//            alertController.addAction(okAction)
-//            self.present(alertController, animated: true, completion: nil)
+            
             let albert = UIAlertController(title: "提示", message: "账号或密码错误", preferredStyle: .alert)
             let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
             
