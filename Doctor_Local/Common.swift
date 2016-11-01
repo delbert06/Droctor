@@ -15,3 +15,6 @@ let kTabbarH : CGFloat = 44
 
 let kScreenW = UIScreen.main.bounds.width
 let kScreenH = UIScreen.main.bounds.height
+
+let kcontentW = kScreenW - 200 - 15 - 10
+let kcontentH = kScreenH - kStautusBarH - 130 - 15 - 10 - 5

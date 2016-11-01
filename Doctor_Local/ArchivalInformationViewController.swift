@@ -13,23 +13,42 @@ private let ktitleViewH : CGFloat = UIScreen.main.bounds.width - kNavigationBarH
 class ArchivalInformationViewController: UIViewController {
     
     @IBOutlet weak var leftView: UIView!
-//    lazy var titleView: TitleView = {
-////        let titleFrame = CGRect(x: 0, y: kStautusBarH + kNavigationBarH, width: 200, height: ktitleViewH)
-//        let titleFrame = CGRect(x: 0, y: 0, width: 200, height: ktitleViewH)
-//        let titles = ["个人信息","体质信息","行为习惯","签约情况"]
-//        let titleView = TitleView(frame: titleFrame, titles: titles, normalImg: [""], highlightImg: [""])        
-//        return titleView
-//    }()
+    @IBOutlet weak var dataView: UIView!
+    
+    //MARK: - 懒加载属性
+    lazy var titleView: TitleView = {
+//        let titleFrame = CGRect(x: 0, y: kStautusBarH + kNavigationBarH, width: 200, height: ktitleViewH)
+        let titleFrame = CGRect(x: 0, y: 0, width: 200, height: ktitleViewH)
+        let titles = ["个人信息","体质信息"]
+        let titleView = TitleView(frame: titleFrame, titles: titles, normalImg: [""], highlightImg: [""])        
+        return titleView
+    }()
+    
+    lazy var contentView: PageContentView = {
+        
+        let testFram = CGRect(x: 0, y: 0, width: kcontentW, height: kcontentH)
+        
+        var childVCs = [UIViewController]()
+        childVCs.append(PersonInfoViewController())
+        childVCs.append(PhysiqueViewController())
+        
+        let contentView = PageContentView(frame: testFram, childVCs: childVCs, parentVC: self)
+        
+        return contentView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupUI()
-        print("1")
+        setupUI()
     }
 }
 
-//extension ArchivalInformationViewController{
-//    func setupUI(){
-//        leftView.addSubview(titleView)
-//    }
-//}
+extension ArchivalInformationViewController{
+    func setupUI(){
+        leftView.addSubview(titleView)
+        dataView.addSubview(contentView)
+        print("\(contentView.backgroundColor)")
+        
+        
+    }
+}
