@@ -29,8 +29,11 @@ class ArchivalInformationViewController: UIViewController {
         let testFram = CGRect(x: 0, y: 0, width: kcontentW, height: kcontentH)
         
         var childVCs = [UIViewController]()
-        childVCs.append(PersonInfoViewController())
-        childVCs.append(PhysiqueViewController())
+        let personVC = self.storyboard?.instantiateViewController(withIdentifier: "Person")
+        let physiqueVC = self.storyboard?.instantiateViewController(withIdentifier: "Physique")
+        
+        childVCs.append(personVC!)
+        childVCs.append(physiqueVC!)
         
         let contentView = PageContentView(frame: testFram, childVCs: childVCs, parentVC: self)
         

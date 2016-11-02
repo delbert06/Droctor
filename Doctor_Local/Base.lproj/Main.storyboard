@@ -502,7 +502,7 @@
         <!--Person Info View Controller-->
         <scene sceneID="GNl-Rd-T0n">
             <objects>
-                <viewController id="mE4-IY-bpm" customClass="PersonInfoViewController" customModule="Doctor_Local" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Person" id="mE4-IY-bpm" customClass="PersonInfoViewController" customModule="Doctor_Local" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4aX-BX-Rz7"/>
                         <viewControllerLayoutGuide type="bottom" id="mcB-U1-sZN"/>
@@ -519,12 +519,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.42516900169999999" green="0.54446354220000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="csC-d2-QLf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1945.8984374999998" y="244.53125"/>
+        </scene>
+        <!--Physique View Controller-->
+        <scene sceneID="d5E-Sg-gau">
+            <objects>
+                <viewController storyboardIdentifier="Physique" id="hHh-AG-vcI" customClass="PhysiqueViewController" customModule="Doctor_Local" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L0W-kn-RXR"/>
+                        <viewControllerLayoutGuide type="bottom" id="s1b-PU-9GW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lpH-Lz-2p7">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.7285732626914978" green="0.039588034152984619" blue="0.97632008790969849" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l1R-nJ-9kR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1951" y="902"/>
         </scene>
     </scenes>
     <resources>

@@ -15,7 +15,8 @@ class PersonInfoViewController: UIViewController {
         print("PersonInfoViewController")
 //        let vc = UIStoryboard(name: "test", bundle: nil).instantiateInitialViewController() as UIViewController!
 //        addChildViewController(vc!)
-        view.backgroundColor = UIColor.white
+//        view.backgroundColor = UIColor.white
+        self.storyboard?.instantiateViewController(withIdentifier: "Person")
         
 
         // Do any additional setup after loading the view.
